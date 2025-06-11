@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore line ending conversion warnings
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf

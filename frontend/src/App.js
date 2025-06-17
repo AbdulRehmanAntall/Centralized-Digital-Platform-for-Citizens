@@ -1,5 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import Dashboard from './page/Dashboard';
+import Signup from './page/Signup';
+import Login from './page/Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   const fetchData = () => {
@@ -8,11 +13,18 @@ function App() {
       .catch(err => console.error(err));
   };
 
+
+
   return (
-    <div>
-      <h1>React + NodeJS + MySQL Fullstack Project</h1>
-      <button onClick={fetchData}>Fetch Backend Data</button>
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<Signup />} />
+        <Route path='/Login' element={<Login />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

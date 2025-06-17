@@ -3,6 +3,7 @@ import axios from 'axios';
 import Dashboard from './page/Dashboard';
 import Signup from './page/Signup';
 import Login from './page/Login';
+import PasswordReset from './page/PasswordReset';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -20,8 +21,9 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Signup />} />
+        <Route path="/Signup" element={<Signup />} />
         <Route path='/Login' element={<Login />} />
+        <Route path='/PasswordReset' element={<PasswordReset />} />
 
       </Routes>
     </BrowserRouter>

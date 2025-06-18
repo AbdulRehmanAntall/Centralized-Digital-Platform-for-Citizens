@@ -19,7 +19,7 @@ function Dashboard() {
                 console.log('Geolocation is available');
             } else {
                 alert('Geolocation is not available');
-            }
+            } 
         };
 
         const success = async (position) => {

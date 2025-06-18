@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Dashboard from './page/Dashboard';
+import Landing from './page/Landing';
 import Signup from './page/Signup';
 import Login from './page/Login';
 import PasswordReset from './page/PasswordReset';
@@ -20,6 +21,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
+
+        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/' element={<Landing />} />
 
         <Route path="/Signup" element={<Signup />} />
         <Route path='/Login' element={<Login />} />

@@ -1,127 +1,126 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import '../styles/Landing.css';
 
-
 function Landing() {
+    const navigate = useNavigate();
 
-
-    const handlemailus = () => {
-        Window.location.href = "mailto:abdulrehmanantall420@gmail.com?subject=Inquiry";
-
+    const handleEmailUs = () => {
+        window.location.href = "mailto:abdulrehmanantall420@gmail.com?subject=Inquiry";
     }
+
     return (
-
-
         <div className="landing-main-container">
-
             <header className="landing-header">
-                <ul>
-                    <li className="nav-left"> <a href="../">CityPulse</a></li>
-                    <li > <a href="../">About</a></li>
-                    <li> <a href="../Signup">SignUp</a></li>
-                    <li > <a href="../Login">Login</a></li>
-
-                </ul>
-
+                <div className="header-container">
+                    <div className="logo" onClick={() => navigate("/")}>
+                        <span className="logo-icon">🌆</span>
+                        <span className="logo-text">CityPulse</span>
+                    </div>
+                    <nav className="nav-menu">
+                        <button className="nav-link" onClick={() => navigate("/about")}>About</button>
+                        <button className="nav-link" onClick={() => navigate("/signup")}>Sign Up</button>
+                        <button className="nav-link primary" onClick={() => navigate("/login")}>Login</button>
+                    </nav>
+                </div>
             </header>
 
-
-            <div className="landing-content">
-                <div className="features" >
-
-                    <h1>Welcome to CityPulse!</h1>
-                    <p>Stay connected with your city — events, updates, and alerts at your fingertips.</p>
-                </div>
-
-                <div className="cards">
-
-                    <div className="card">
-                        <div className="card-inner">
-                            <div className="card1-front">
-                                <h1>Community Forum </h1>
-                            </div>
-
-                            <div className="card1-back">
-                                <p>Connect and discuss with locals about city issues.</p>
-                            </div>
-
+            <main className="landing-content">
+                <section className="hero-section">
+                    <div className="hero-content">
+                        <h1>Your City. <span className="highlight">Connected.</span></h1>
+                        <p className="hero-subtitle">Real-time updates, community discussions, and local events - all in one place.</p>
+                        <div className="cta-buttons">
+                            <button className="cta-primary" onClick={() => navigate("/signup")}>Join Now</button>
+                            <button className="cta-secondary">See How It Works</button>
                         </div>
-
-
                     </div>
-                    <div className="card">
-                        <div className="card-inner">
-                            <div className="card2-front">
-                                <h1>Live City Updates</h1>
-                            </div>
+                    <div className="hero-image">
+                        <div className="city-mockup"></div>
+                    </div>
+                </section>
 
-                            <div className="card2-back">
-                                <p>Get instant updates on traffic, events, and emergencies.</p>
-                            </div>
-
+                <section className="features-section">
+                    <h2 className="section-title">Why CityPulse?</h2>
+                    <p className="section-subtitle">Stay informed and engaged with what's happening in your community</p>
+                    
+                    <div className="features-grid">
+                        <div className="feature-card">
+                            <div className="feature-icon">💬</div>
+                            <h3>Community Forum</h3>
+                            <p>Connect and discuss with locals about city issues, projects, and improvements.</p>
                         </div>
-
-
-                    </div>
-                    <div className="card">
-                        <div className="card-inner">
-                            <div className="card3-front">
-                                <h1>Local Events</h1>
-                            </div>
-
-                            <div className="card3-back">
-                                <p>Discover what's happening near you, from concerts to job fairs.</p>
-                            </div>
-
+                        <div className="feature-card">
+                            <div className="feature-icon">🚦</div>
+                            <h3>Live Updates</h3>
+                            <p>Real-time alerts on traffic, construction, weather, and city services.</p>
                         </div>
-
-
-
-                    </div>
-                    <div className="card">
-                        <div className="card-inner">
-                            <div className="card4-front">
-                                <h1> Safety Alerts</h1>
-                            </div>
-
-                            <div className="card4-back">
-                                <p> Receive emergency and crime alerts in real-time.</p>
-                            </div>
-
+                        <div className="feature-card">
+                            <div className="feature-icon">🎪</div>
+                            <h3>Local Events</h3>
+                            <p>Discover and RSVP to events happening in your neighborhood.</p>
                         </div>
-
-
-
+                        <div className="feature-card">
+                            <div className="feature-icon">🚨</div>
+                            <h3>Safety Alerts</h3>
+                            <p>Instant notifications about emergencies and important safety information.</p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
+                <section className="testimonials-section">
+                    <h2 className="section-title">What Citizens Are Saying</h2>
+                    <div className="testimonials-container">
+                        <div className="testimonial">
+                            <p>"CityPulse helped me avoid a major traffic jam and find a community cleanup event in my area!"</p>
+                            <div className="testimonial-author">- Sarah K., Downtown Resident</div>
+                        </div>
+                        <div className="testimonial">
+                            <p>"Finally an app that connects me to what's really happening in my city. The forum is amazing!"</p>
+                            <div className="testimonial-author">- Miguel T., Westside</div>
+                        </div>
+                    </div>
+                </section>
 
-
-
-            </div>
+                <section className="cta-section">
+                    <h2>Ready to connect with your city?</h2>
+                    <button className="cta-large" onClick={() => navigate("/signup")}>Get Started Today</button>
+                </section>
+            </main>
 
             <footer className="landing-footer">
-                <p>&copy; 2025 CityPulse. All rights reserved.</p>
-                <p>Follow us:
-
-                    <a href="#"> Facebook </a>|
-                    <a href="#"> Twitter </a>|
-                    <a href="#"> Instagram </a>
-
-                </p>
+                <div className="footer-content">
+                    <div className="footer-section">
+                        <h3>CityPulse</h3>
+                        <p>Connecting communities through technology.</p>
+                        <div className="social-links">
+                            <a href="#" aria-label="Facebook">📘</a>
+                            <a href="#" aria-label="Twitter">🐦</a>
+                            <a href="#" aria-label="Instagram">📷</a>
+                        </div>
+                    </div>
+                    <div className="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><button onClick={() => navigate("/about")}>About Us</button></li>
+                            <li><button onClick={() => navigate("/signup")}>Sign Up</button></li>
+                            <li><button onClick={handleEmailUs}>Contact</button></li>
+                        </ul>
+                    </div>
+                    <div className="footer-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><button>Privacy Policy</button></li>
+                            <li><button>Terms of Service</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="footer-bottom">
+                    <p>&copy; {new Date().getFullYear()} CityPulse. All rights reserved.</p>
+                </div>
             </footer>
-        </div >
-
-
-
-    )
-        ;
-
-
-
-
+        </div>
+    );
 }
 
 export default Landing;

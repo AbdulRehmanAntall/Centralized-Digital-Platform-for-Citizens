@@ -1,74 +1,195 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
-}
-
 .NewAccountCreation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light);
+  padding: 20px;
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
 }
 
 .NewAccountForm {
-    background-color: rgba(24, 24, 24, 0.95);
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
-    width: 350px;
-    text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.NewAccountForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.NewAccountForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 
 .NewAccountForm h2 {
-    margin-bottom: 25px;
-    color: #e0e0e0;
+  margin-bottom: 24px;
+  color: var(--dark);
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.NewAccountForm h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
 }
 
 .NewAccountForm label {
-    display: block;
-    text-align: left;
-    margin: 10px 0 5px;
-    font-size: 14px;
-    color: #ccc;
+  display: block;
+  text-align: left;
+  margin: 15px 0 6px;
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 500;
 }
 
-.NewAccountForm input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
-    background-color: #262626;
-    color: #f5f5f5;
-    font-size: 14px;
+.NewAccountForm input,
+.NewAccountForm select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: var(--dark);
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.NewAccountForm input:focus {
-    outline: none;
-    border: 1px solid #03dac5;
-    background-color: #1f1f1f;
+.NewAccountForm input:focus,
+.NewAccountForm select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
 }
 
 .NewAccountForm button {
-    width: 100%;
-    padding: 12px;
-    background-color: #03dac5;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    color: #121212;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .NewAccountForm button:hover {
-    background-color: #00c4a7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.NewAccountForm button:active {
+  transform: translateY(0);
 }
 
 .NewAccountForm button:disabled {
-    background-color: #555;
-    cursor: not-allowed;
+  background: #ccc;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.ExistingAccountLink {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.ExistingAccountLink a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.ExistingAccountLink a:hover {
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+.phone-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.country-code-select {
+  flex: 0 0 100px;
+}
+
+.phone-number-input {
+  flex: 1;
+}
+
+.password-strength {
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.password-strength-fill {
+  height: 100%;
+  width: 0%;
+  background: #ff4757;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group .icon {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  color: var(--gray);
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .NewAccountForm {
+    padding: 25px 20px;
+  }
+  
+  .phone-input-container {
+    flex-direction: column;
+  }
+  
+  .country-code-select {
+    flex: 1;
+    width: 100%;
+  }
 }

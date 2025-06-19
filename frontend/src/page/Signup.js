@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import '../styles/Signup.css'
+import '../styles/Signup.css'
 import axios from 'axios';
 
 function Signup() {
@@ -372,10 +372,11 @@ function Signup() {
 
                 </form >
 
+                <a href='../Login'>Already have an account</a>
+
 
             </div>
-            <br />
-            <a href='../Login'>Already have an account</a>
+
         </div>
 
 

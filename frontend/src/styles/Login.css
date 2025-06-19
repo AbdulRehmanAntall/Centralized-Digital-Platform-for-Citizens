@@ -1,0 +1,101 @@
+.LoginAree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--light);
+}
+
+.LoginForm {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.LoginForm:hover {
+  transform: translateY(-5px);
+}
+
+.LoginForm label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.LoginForm input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  color: var(--dark);
+  font-size: 14px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.LoginForm input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.LoginForm button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.LoginForm button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+}
+
+.LoginForm button:active {
+  transform: scale(0.97);
+}
+
+.LoginAree a {
+  margin-top: 15px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: color 0.2s ease;
+}
+
+.LoginAree a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.fun-emoji {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  animation: bounce 1.2s infinite;
+}
+
+/* Fun little bounce for emoji */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
